@@ -35,6 +35,13 @@ def constrained_LLS(A, B):
       x: n-diemsional vector that minimises ||Ax||2 subject to ||Bx||2=1 
     '''
     #TODO: Fill your work here
+    n = np.shape(B)[0]
+    c = np.array([0.00001]*n, ndmin = 1)
+    c = np.diag(c)
+    if np.linalg.matrix_rank(B) != n:
+        B += c
+
+
 
 
 
