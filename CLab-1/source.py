@@ -20,6 +20,11 @@ def low_rank_approx(A, k):
          up to rank k
     '''
     #TODO: Fill your work here
+    u, s, vh = np.linalg.svd(A)
+    n = len(s)
+    s[k:n] = 0
+    X = u @ np.diag(s) @ vh
+    return X
 
 def constrained_LLS(A, B):
     '''
